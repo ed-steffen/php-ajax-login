@@ -1,0 +1,8 @@
+xcopy C:\Users\Edinei\Documents\GitHub\php-ajax-login\*.* C:\xampp\htdocs\php-ajax-login\ /E/C/Y
+cls
+
+echo Back-up finalizado com sucesso!
+
+pause
+
+start http://localhost/php-ajax-login/
