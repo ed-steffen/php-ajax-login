@@ -4,7 +4,7 @@ $(document).ready(function () {
         $('#mensagem').fadeIn();
         $.ajax({
             type: "POST",
-            url: 'php/register.php',
+            url: '../server/php/register.php',
             data: {
                 firstname: $("#firstname").val(),
                 username: $("#lastname").val(),
@@ -18,7 +18,10 @@ $(document).ready(function () {
                     $('#mensagem').html(data);
                 }
                 $('#mensagem').fadeOut();
-            }
+            },
+            error: function(erro) {
+                $('#mensagem').html('CONEXÃO COM SERVIDOR FALHOU...' + erro.responseText);
+            },
         });
         //window.location.replace('index.php');
         //$('#mensagem').html('');
