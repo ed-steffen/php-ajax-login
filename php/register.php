@@ -1,18 +1,29 @@
 <?php
- include 'db.inc.php';
+    include 'db.inc.php';
 
- $sql = "INSERT into tbl_accounts (firstname, lastname, username, 
-  password) VALUES ('".$_POST["firstname"]."','".$_POST["lastname"].
-  "','".$_POST["username"]."','".$_POST["password"]."')";
- $result = $conn->query($sql);
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
- $conn->close();
-  
- if($result){
-    echo "sim";
-   }else{
-    echo "não";
-   }
+    $txt = "INSERT into tbl_accounts (firstname, lastname, username, password) ".
+            "VALUES (?,?,?,?)";
+
+    if ($stmt = prepare($txt)) {
+        $stmt->bind_param("ssss", $firstname, $lastname, $username, $password);
+
+        $stmt->execute();
+
+        $stmt->close();
+
+        if($result) {
+            echo "sim";
+        } else {
+            echo "não";
+        }
+
+    }
+
 
 
 

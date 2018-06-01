@@ -2,9 +2,10 @@ $(document).ready(function () {
     $('#btnsubmit').click(function () {
         $('#mensagem').html('SALVANDOOO....');
         $('#mensagem').fadeIn();
+        acao = "save";
         $.ajax({
             type: "POST",
-            url: '../server/php/register.php',
+            url: 'php/pdo_register.php?act=' + acao,
             data: {
                 firstname: $("#firstname").val(),
                 username: $("#lastname").val(),
@@ -12,12 +13,12 @@ $(document).ready(function () {
                 password: $("#password").val()
             },
             success: function (data) {
-                if (data == 'sim') {
+                if (data == 'SIM') {
                     $('#mensagem').html('REGISTRO INSERIDO COM SUCESSO!');
                 } else {
                     $('#mensagem').html(data);
                 }
-                $('#mensagem').fadeOut();
+                $('#mensagem').delay(2000).fadeOut();
             },
             error: function(erro) {
                 $('#mensagem').html('CONEXÃO COM SERVIDOR FALHOU...' + erro.responseText);
