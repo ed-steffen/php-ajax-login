@@ -6,6 +6,8 @@
 
     https://forum.imasters.com.br/topic/554729-pegar-array-do-php-via-ajax/
 
+    https://stackoverflow.com/questions/6395720/get-data-from-php-array-ajax-jquery
+
     */
     include_once 'pdo_server.php';
 
