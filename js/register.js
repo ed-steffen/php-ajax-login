@@ -20,12 +20,12 @@ $(document).ready(function () {
                 }
                 $('#mensagem').delay(2000).fadeOut();
             },
-            error: function(erro) {
+            error: function (erro) {
                 $('#mensagem').html('CONEXÃO COM SERVIDOR FALHOU...' + erro.responseText);
             },
         });
         //window.location.replace('index.php');
         //$('#mensagem').html('');
     });
-    
 });
+

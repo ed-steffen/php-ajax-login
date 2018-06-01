@@ -59,6 +59,28 @@
         } catch (PDOException $erro) {
             echo "Erro: " . $erro->getMessage();
         }
-    }    
+    } 
+    
+    if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "sel") {
+        $stmt = $conexao->prepare("select * from tbl_accounts order by id desc");
+        $stmt->execute();
+        while($row = $stmt->fetch()){
+            $id = $row['id'];
+            $firstname = $row['firstname'];
+            $lastname = $row['lastname'];
+            $username = $row['username'];
+            $password = $row['password'];
+        
+            $return_arr[] = array(
+                "id" => $id,
+                "firstname" => $firstname,
+                "lastname" => $lastname,
+                "username" => $username,
+                "password" => $password
+            );
+        }
+        echo json_encode($return_arr);
+
+    }
 
 ?>
