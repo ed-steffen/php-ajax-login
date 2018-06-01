@@ -8,6 +8,10 @@
 
     https://stackoverflow.com/questions/6395720/get-data-from-php-array-ajax-jquery
 
+
+    BOM
+    http://makitweb.com/return-json-response-ajax-using-jquery-php/
+
     */
     include_once 'pdo_server.php';
 
