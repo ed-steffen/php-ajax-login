@@ -2,6 +2,10 @@
     
     /*
     https://alexandrebbarbosa.wordpress.com/2016/09/04/php-pdo-crud-completo/
+
+
+    https://forum.imasters.com.br/topic/554729-pegar-array-do-php-via-ajax/
+
     */
     include_once 'pdo_server.php';
 
